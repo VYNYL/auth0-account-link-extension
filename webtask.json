@@ -3,7 +3,7 @@
   "name": "auth0-account-link",
   "version": "3.1.1",
   "preVersion": "3.1.0",
-  "author": "auth0",
+  "author": "multitudes",
   "description":
     "This extension gives Auth0 customers the ability to allow their users to link their accounts",
   "type": "application",
