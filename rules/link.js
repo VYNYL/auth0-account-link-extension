@@ -22,8 +22,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
   var config = {
     endpoints: {
       linking: '${extensionURL.replace(/\/$/g, '')}',
-      userApi: auth0.baseUrl + '/users',
-      usersByEmailApi: auth0.baseUrl + '/users-by-email'
+      userApi: auth0.baseUrl + '/users'
     },
     token: {
       clientId: '${clientID}',
