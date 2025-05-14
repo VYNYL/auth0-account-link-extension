@@ -10,6 +10,7 @@ const factory = (wtConfig, wtStorage) => {
     process.env.CLIENT_VERSION
   );
   logger.info(' > WT_URL:', wtConfig('WT_URL'));
+  logger.info('hello 3')
   logger.info(' > PUBLIC_WT_URL:', wtConfig('PUBLIC_WT_URL'));
   logger.info('hello!')
   // Require in place to load the dependency only when needed
