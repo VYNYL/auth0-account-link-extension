@@ -30,6 +30,7 @@ const createServer = (context, req, res) => {
     if (!publicUrl) {
       config.setValue('PUBLIC_WT_URL', urlHelpers.getWebtaskUrl(req));
     }
+    console.log('hello 2')
     // After the application has been initialized we remove the
     // artificial delay in processing
     const createServer2 = localTools.createServer(factory);
