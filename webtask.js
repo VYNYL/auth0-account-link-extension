@@ -11,6 +11,7 @@ const factory = (wtConfig, wtStorage) => {
   );
   logger.info(' > WT_URL:', wtConfig('WT_URL'));
   logger.info(' > PUBLIC_WT_URL:', wtConfig('PUBLIC_WT_URL'));
+  logger.info('hello!')
   // Require in place to load the dependency only when needed
   // and avoid Blocked event loop errors
   const hapiApp = require('./server/init');
