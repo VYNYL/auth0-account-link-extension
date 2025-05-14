@@ -1,7 +1,7 @@
 {
-  "name": "auth0-account-link-extension",
+  "name": "auth0-account-link-extension-multitudes",
   "version": "3.2.0",
-  "description": "Auth0 Account Link Extension",
+  "description": "Auth0 Account Link Extension Multitudes",
   "main": "index.js",
   "engines": {
     "node": ">=22"
