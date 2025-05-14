@@ -31,6 +31,8 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
     }
   };
 
+  console.log(user)
+
   // If the user does not have an e-mail account,
   // just continue the authentication flow.
   // See auth0-extensions/auth0-account-link-extension#33
@@ -148,7 +150,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
 
   function promptUser() {
     return searchUsersWithSameEmail().then(function transformUsers(users) {
-      
+      console.log('promptUser', users)
       return users.filter(function(u) {
         return u.user_id !== user.user_id;
       }).map(function(user) {
