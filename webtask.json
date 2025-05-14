@@ -7,8 +7,8 @@
   "description":
     "This extension was modified by Multitudes to give Auth0 customers the ability to allow their users to link their accounts",
   "type": "application",
-  "logoUrl": "https://cdn.auth0.com/extensions/auth0-authz/assets/logo.svg",
-  "docsUrl": "https://auth0.com/docs/extensions/account-link",
+  "logoUrl": "",
+  "docsUrl": "",
   "initialUrlPath": "/login",
   "repository": "https://github.com/brandonin/auth0-account-link-extension",
   "keywords": ["auth0", "extension", "account-link"],
