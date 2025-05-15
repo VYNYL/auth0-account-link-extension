@@ -15,7 +15,6 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
   var CONTINUE_PROTOCOL = 'redirect-callback';
   var LOG_TAG = '[ACCOUNT_LINK]: ';
   console.log(LOG_TAG, 'Entered Account Link Rule');
-  console.log('here we are', user);
 
   // 'query' can be undefined when using '/oauth/token' to log in
   context.request.query = context.request.query || {};
@@ -149,7 +148,6 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
 
   function promptUser() {
     return searchUsersWithSameEmail().then(function transformUsers(users) {
-      console.log('promptUser', users)
       return users.filter(function(u) {
         return u.user_id !== user.user_id;
       }).map(function(user) {
