@@ -7,7 +7,7 @@
   "description":
     "This extension was modified by Multitudes to give Auth0 customers the ability to allow their users to link their accounts",
   "type": "application",
-  "logoUrl": "",
+  "logoUrl": "https://multitudes-client-develop.herokuapp.com/logo.svg",
   "docsUrl": "",
   "initialUrlPath": "/login",
   "repository": "https://github.com/brandonin/auth0-account-link-extension",
