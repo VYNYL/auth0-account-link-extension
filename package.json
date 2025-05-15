@@ -1,7 +1,7 @@
 {
-  "name": "auth0-account-link-extension-multitudes",
-  "version": "3.3.0",
-  "description": "Auth0 Account Link Extension Multitudes",
+  "name": "auth0-account-link-extension",
+  "version": "3.2.0",
+  "description": "Auth0 Account Link Extension",
   "main": "index.js",
   "engines": {
     "node": ">=22"
@@ -14,7 +14,7 @@
     "lint:fix": "eslint --fix .",
     "serve:dev": "gulp run",
     "client:build": "minify --clean --output dist/assets/link.$npm_package_version.min.css public/css/link.css && minify --clean --output dist/assets/admin.$npm_package_version.min.css public/css/admin.css",
-    "extension:build": "a0-ext build:server ./webtask.js ./dist && cp ./dist/auth0-account-link-extension-multitudes.extension.$npm_package_version.js ./build/bundle.js",
+    "extension:build": "a0-ext build:server ./webtask.js ./dist && cp ./dist/auth0-account-link-extension.extension.$npm_package_version.js ./build/bundle.js",
     "build": "yarn run client:build && yarn run extension:build"
   },
   "author": "Auth0",

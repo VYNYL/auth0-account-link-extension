@@ -10,9 +10,9 @@ const factory = (wtConfig, wtStorage) => {
     process.env.CLIENT_VERSION
   );
   logger.info(' > WT_URL:', wtConfig('WT_URL'));
-  logger.info('hello 3')
+  logger.info('hello 3');
   logger.info(' > PUBLIC_WT_URL:', wtConfig('PUBLIC_WT_URL'));
-  logger.info('hello!')
+  logger.info('hello!');
   // Require in place to load the dependency only when needed
   // and avoid Blocked event loop errors
   const hapiApp = require('./server/init');
@@ -31,7 +31,7 @@ const createServer = (context, req, res) => {
     if (!publicUrl) {
       config.setValue('PUBLIC_WT_URL', urlHelpers.getWebtaskUrl(req));
     }
-    console.log('hello 2')
+    console.log('hello 2');
     // After the application has been initialized we remove the
     // artificial delay in processing
     const createServer2 = localTools.createServer(factory);
