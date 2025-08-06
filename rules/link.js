@@ -35,6 +35,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
   // just continue the authentication flow.
   // See auth0-extensions/auth0-account-link-extension#33
   if (user.email === undefined) {
+    console.log(LOG_TAG, 'No email, continuing.');
     return callback(null, user, context);
   }
 
@@ -42,10 +43,11 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
 
   function createStrategy() {
     if (shouldLink()) {
+      console.log(LOG_TAG, 'Should link accounts.');
       return linkAccounts();
     } else if (shouldPrompt()) {
+      console.log(LOG_TAG, 'Should prompt user.');
       return promptUser();
-
     }
 
     return continueAuth();
@@ -69,6 +71,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
       // since merging already active accounts can be a
       // destructive action
       function firstLogin() {
+        console.log(LOG_TAG, 'Login count:', context.stats.loginsCount);
         return context.stats.loginsCount <= 1;
       }
 
@@ -149,6 +152,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
   function promptUser() {
     return searchUsersWithSameEmail().then(function transformUsers(users) {
       return users.filter(function(u) {
+        console.log(LOG_TAG, 'Found user with same email:', u.user_id);
         return u.user_id !== user.user_id;
       }).map(function(user) {
         return {
@@ -242,6 +246,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
 
       request(reqOptions, function handleResponse(err, response, body) {
         if (err) {
+          console.error(LOG_TAG, 'Request error:', err);
           reject(err);
         } else if (response.statusCode < 200 || response.statusCode >= 300) {
           console.error(LOG_TAG, 'API call failed: ', body);
