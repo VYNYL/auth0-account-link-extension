@@ -50,6 +50,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
       return promptUser();
     }
 
+    console.log(LOG_TAG, 'No linking conditions met, continuing.');
     return continueAuth();
 
     function shouldLink() {
@@ -63,6 +64,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
       // in order to avoid a redirect loop
       // TODO: May no longer be necessary
       function insideRedirect() {
+        console.log(LOG_TAG, 'Checking if inside redirect.');
         return context.request.query.redirect_uri &&
           context.request.query.redirect_uri.indexOf(config.endpoints.linking) !== -1;
       }
@@ -80,6 +82,7 @@ module.exports = ({ extensionURL = '', username = 'Unknown', clientID = '', clie
       // be sent to /continue at this point. We need
       // to assign them to their primary user if so.
       function redirectingToContinue() {
+        console.log(LOG_TAG, 'Checking protocol for continue.');
         return context.protocol === CONTINUE_PROTOCOL;
       }
     }
